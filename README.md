@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @PeterOyelegbin
-- 👀 I’m interested in Maintenance Engineering, Python and Kotlin Programming Languages, Software and Web Development, Networking, Data Science.
+- 👀 I’m interested in Maintenance Engineering, Industrial Automation, Python and Kotlin Programming Languages, Full-Stack Web Development, Networking, Data Science.
 - 🌱 I’m currently learning Data Science.
-- 💞️ I’m looking to collaborate on Software and Web based project.
+- 💞️ I’m looking to collaborate on Web based projects.
 - 📫 How to reach me peteroyelegbin@gmail.com
 
 <!---
