@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @PeterOyelegbin
-- 👀 I’m an HVAC Engineer whose curiosity led him to explore different aspect of programming from desktop app, to web development, to mobile app development and data science. My major interest are in Maintenance Engineering, Automation, Python(Flask/Django), Kotlin, and Flutter Programming Languages, Web and Mobile App Development, and Data Science.
+- 👀 I’m a HVAC Engineer whose curiosity led him to explore various aspect of programming from desktop app, to web development, to mobile app development and data science. My major interest are in providng Engineering solutions in: Pure maintenance Engineering Practices, Web, Cloud, and Data services, with industry recognized skill-set such as: Automation, Python(Flask/Django), Kotlin/Flutter, Pandas.
 - 🌱 I’m currently learning Django Backend Engineering.
 - 💞️ I’m looking to collaborate on Web based projects.
 - 📫 Reach me @ peteroyelegbin@gmail.com
