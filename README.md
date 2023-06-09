@@ -1,5 +1,6 @@
 👋 Hi, I’m @PeterOyelegbin
 
+
 👀 Peter Taiwo Oyelegbin, known as Peter Oyelegbin in his professional capacity as a Django Web App Developer, is situated in Lagos, Nigeria. Presently, he holds a position as an IT Support Officer at Alert Microfinance Bank Limited. Additionally, he actively volunteers for See9jaNG. Peter possesses a strong background in HVAC System Maintenance and upholds a robust maintenance culture. He graduated from Yaba College of Technology, majoring in Industrial Maintenance Engineering.
 
 Passionate about the field of artificial intelligence, Peter exhibits tremendous enthusiasm for the technology industry. He eagerly seeks collaboration opportunities with fellow developers and endeavors to establish connections with brilliant minds.
@@ -9,8 +10,9 @@ Peter's primary focus revolves around delivering comprehensive website developme
 - School portal creation
 - Hospital health management system implementation
 - E-commerce website construction
-*Domain registration services
-*Website hosting solutions, and more.
+- Domain registration services
+- Website hosting solutions, and more.
+
 
 - 🔭 He is currently engaged in developing a Credit Approval Memorandum (CAM) Portal to aid internal loan approval specifically for Alert Microfinance Bank.
 - 🌱 He is currently learning Cloud Engineering.
