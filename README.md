@@ -12,10 +12,10 @@ Peter's primary focus revolves around delivering comprehensive website developme
 *Domain registration services
 *Website hosting solutions, and more.
 
-🔭 He is currently engaged in developing a Credit Approval Memorandum (CAM) Portal to aid internal loan approval specifically for Alert Microfinance Bank.
-🌱 He is currently learning Cloud Engineering.
-💞️ He is looking to collaborate on web/mobile app projects as Backend/Django developer.
-📫 Reach him @ peteroyelegbin@gmail.com
+- 🔭 He is currently engaged in developing a Credit Approval Memorandum (CAM) Portal to aid internal loan approval specifically for Alert Microfinance Bank.
+- 🌱 He is currently learning Cloud Engineering.
+- 💞️ He is looking to collaborate on web/mobile app projects as Backend/Django developer.
+- 📫 Reach him @ peteroyelegbin@gmail.com
 
 <!---
 PeterOyelegbin/PeterOyelegbin is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
