@@ -15,8 +15,11 @@ Peter's primary focus revolves around delivering comprehensive website developme
 
 
 🔭 He is currently engaged in developing a Credit Approval Memorandum (CAM) Portal to aid internal loan approval specifically for Alert Microfinance Bank.
+
 🌱 He is currently learning Cloud Engineering.
+
 💞️ He is looking to collaborate on web/mobile app projects as Backend/Django developer.
+
 📫 Reach him @ peteroyelegbin@gmail.com
 
 <!---
