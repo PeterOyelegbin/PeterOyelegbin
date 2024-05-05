@@ -1,24 +1,20 @@
 👋 Hi, I’m @PeterOyelegbin
 
+👀 Peter Taiwo Oyelegbin is an IT professional specializing in IT Support, Backend Development, and Cloud Computing - with a solid background encompassing 5 years in Maintenance Practice and 2 years in IT Support, he has navigated through intricate technical landscapes, mastering troubleshooting and solution-driven approaches in dynamic settings.
 
-👀 Peter Taiwo Oyelegbin, known as Peter Oyelegbin in his professional capacity as a Django Web App Developer, is situated in Lagos, Nigeria. Presently, he holds a position as an IT Support Officer at Alert Microfinance Bank Limited. Additionally, he actively volunteers for See9jaNG. Peter possesses a strong background in HVAC System Maintenance and upholds a robust maintenance culture. He graduated from Yaba College of Technology, majoring in Industrial Maintenance Engineering.
+Key Strengths:
+* Technical Support: Proficient in diagnosing and resolving technical issues promptly.
+* Backend Development: Skilled in creating efficient, scalable web applications using Python and Django.
+* Cloud Computing: Experienced in deploying and managing cloud-based solutions.
 
-Passionate about the field of artificial intelligence, Peter exhibits tremendous enthusiasm for the technology industry. He eagerly seeks collaboration opportunities with fellow developers and endeavors to establish connections with brilliant minds.
+Professional Philosophy:
+He believes in collaborative teamwork, fostering a safe work environment, and continuous learning.
 
-Peter's primary focus revolves around delivering comprehensive website development solutions, including but not limited to:
-- API design and development
-- School portal creation
-- Hospital health management system implementation
-- E-commerce website construction
-- Domain registration services
-- Website hosting solutions, and more.
+🔭 He is currently engaged in developing a Document Archive Portal to aid loan documents approval and storage specifically for Alert Microfinance Bank.
 
+🌱 He is currently learning Cloud Computing.
 
-🔭 He is currently engaged in developing a Credit Approval Memorandum (CAM) Portal to aid internal loan approval specifically for Alert Microfinance Bank.
-
-🌱 He is currently learning Cloud Engineering.
-
-💞️ He is looking to collaborate on web/mobile app projects as Backend/Django developer.
+💞️ He is looking to collaborate on web/mobile app projects as a Backend developer.
 
 📫 Reach him @ peteroyelegbin@gmail.com
 
