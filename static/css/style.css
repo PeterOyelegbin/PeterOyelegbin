@@ -1,0 +1,63 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.img-fluid.rounded-circle {
+    width: 300px;
+    aspect-ratio: 1; /* Adjust the value as needed */
+}
+
+.social-link a {
+    text-decoration: none;
+    color: orange;
+}
+
+.tab-items {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.glide__arrow {
+    background: none;
+    border: none;
+    color: orange;
+    width: 40px;
+    aspect-ratio: 1;
+}
+
+.glide__arrow--left {
+    position: absolute;
+    top: 40%;
+    left: 0.01%;
+    z-index: 10;
+}
+
+.glide__arrow--right {
+    position: absolute;
+    top: 40%;
+    right: 0.01%;
+    z-index: 10;
+}
+
+.contact-section {
+    background: #333 url("https://img.freepik.com/free-photo/colleagues-working-together-call-center-with-headphones_23-2149256084.jpg?size=626&ext=jpg&ga=GA1.2.405634466.1654584137");
+    background-size: cover;
+    background-blend-mode: overlay;
+    height: 50vh;
+}
+
+.review-section {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.review-section div {
+    padding: 10px;
+}

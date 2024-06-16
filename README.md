@@ -10,9 +10,9 @@ Key Strengths:
 Professional Philosophy:
 He believes in collaborative teamwork, fostering a safe work environment, and continuous learning.
 
-🔭 He is currently engaged in developing a Document Archive Portal to aid loan documents approval and storage specifically for Alert Microfinance Bank.
+🔭 He is currently engaged in developing a E-Voting Web App to improve Nigeria electoral process.
 
-🌱 He is currently learning Cloud Computing.
+🌱 He is currently exploring Cloud Computing.
 
 💞️ He is looking to collaborate on web/mobile app projects as a Backend developer.
 

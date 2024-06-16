@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Contact Section -->
+<section class="contact-section container-fluid d-flex align-items-center">
+    <div class="text-white text-center">
+        <h2>Contact me right away!</h2>
+        <p class="h4">I specialize in developing bespoke APIs. Please do not hesitate to use the button below if your company needs my expertise.</p>
+        <a class="btn btn-primary rounded" href="tel:+2348078828296">Call me</a>
+        <a class="btn btn-primary rounded" href="mailto:peteroyelegbin@gmail.com">Send a mail</a>
+    </div>
+</section>
+
+<!-- Review Section -->
+<section class="review-section">
+    <div class="col-md-6">
+        <form class="card rounded" action="{% url 'contact' %}" method="post">
+            <h3 class="card-header text-white">Rate my services</h3>
+            {% csrf_token %}
+            {{ formset.management_form }}
+            <div class="row">
+                {% for form in formset %}
+                <div class="form-group">
+                    {{ form.label_tag }}
+                    {{ form }}
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-success align-self-center rounded w-50 mb-2">Send</button>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <!-- Testimonial section -->
+        <section class="card rounded" style="height: 340px; min-width: 350px;">
+            <h3 class="card-header text-white">Testimonial</h3>
+            {% if reviews %}
+                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for review in reviews %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <img src="{{ review.gravatar_url }}" class="mr-3 rounded-circle" alt="User Image" width="30" height="30">
+                            <span class="card-title h4">{{ review.full_name }}</span>
+                            <hr>
+                            <p style="height: 120px; overflow-y: scroll;">{{ review.comment }}</p>
+                            <div class="d-flex justify-content-between">
+                                <p class="text-muted text-warning">
+                                    {{ review.ratings }} <i class="material-symbols-outlined text-warning">hotel_class</i>
+                                </p>
+                                <p class="text-muted">
+                                    <i class="material-symbols-outlined text-warning">calendar_month</i> {{ review.date }}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            {% else %}
+                <img class="card-img-top" src="/static/images/reviews_unavailable.png" style="height: 280px;" alt="404_icon">
+            {% endif %}
+        </section>
+
+        <!-- Map section -->
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item w-100" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d8119446.871057932!2d3.4308096!3d6.4487424!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1714847958864!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="height: 180px;"></iframe>
+        </div>
+    </div>
+</section>
+{% endblock %}

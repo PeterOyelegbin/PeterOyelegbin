@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container mt-3 mb-3">
+    <!-- About Section -->
+    <div class="row mb-3">
+        <div class="col-md-4 text-center mb-3">
+            <img class="img-fluid rounded-circle mb-3" src="{% static 'images/profile_pic.png' %}" alt="profile_pic">
+            <div class="social-link d-flex flex-col justify-content-evenly">
+                <a href="https://www.linkedin.com/in/PeterOyelegbin" target="_blank" class="fab fa-linkedin fa-2x"></a>
+                <a href="https://twitter.com/PeterOyelegbin" target="_blank" class="fab fa-twitter fa-2x"></a>
+                <a href="https://facebook.com/peter.oyelegbin" target="_blank" class="fab fa-facebook fa-2x"></a>
+                <a href="https://github.com/PeterOyelegbin" target="_blank" class="fab fa-github fa-2x"></a>
+                <a href="https://drive.google.com/file/d/1P2fm9xSNQg9UuADUt--QXGjPm4VCgQ_6/view?usp=drive_link" target="_blank" class="fa fa-briefcase fa-2x"></a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h2 class="text-primary">Hello, I am Peter Oyelegbin</h2>
+            <p>I am a skilled Backend Engineer with expertise in Cloud Computing based in Lagos. With over 2 years of experience, I specialize in building functional and secure applications.</p>
+            <p>I am ecstatic about the tech industry, constantly eager to learn, collaborate with other developers and connect with other brilliant minds.</p>
+            <p>My services include:
+                <ul>
+                    <li>Building out the core application logic</li>
+                    <li>Working with APIs</li>
+                    <li>Building/maintaining databases</li>
+                    <li>Cloud infrastructure management</li>
+                    <li>Domain registration and web hosting</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <!-- Tab Section -->
+    <ul class="nav nav-pills nav-justified mb-1" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" type="button" role="tab" aria-controls="education" aria-selected="true">Education</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="false">Skills</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience" type="button" role="tab" aria-controls="experience" aria-selected="false">Experience</button>
+        </li>
+    </ul>
+
+    <!-- Tab content -->
+    <div class="tab-content" id="myTabContent">
+        <!-- Education Section -->
+        <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="education-tab">
+            <div class="tab-items mb-3">
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Coursera
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Google IT Automation with Python</h4>
+                    </div>
+                    <div class="card-footer text-muted">2024</div>
+                </div>
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Coursera
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Google IT Support</h4>
+                    </div>
+                    <div class="card-footer text-muted">2023</div>
+                </div>
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Coursera
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Meta Backend Developer</h4>
+                    </div>
+                    <div class="card-footer text-muted">2022</div>
+                </div>
+                <div class="card rounded" style="width: 350px;">
+                    <div class="card-header">
+                        Yaba College of Technology
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">HND, Industrial Maintenance Engineering</h4>
+                    </div>
+                    <div class="card-footer text-muted">2021</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill Section -->
+        <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+            <div class="tab-items mb-3">
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Frontend
+                    </div>
+                    <div class="card-body tab-items">
+                        <img class="btn" src="https://skillicons.dev/icons?i=html" alt="html5-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=css" alt="css-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=javascript" alt="javascript-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=bootstrap" alt="bootstrap-icon" sizes="" srcset="">
+                    </div>
+                </div>
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Backend
+                    </div>
+                    <div class="card-body tab-items">
+                        <img class="btn" src="https://skillicons.dev/icons?i=python" alt="html5-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=django" alt="css-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=mysql" alt="javascript-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=postgres" alt="bootstrap-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=mongodb" alt="bootstrap-icon" sizes="" srcset="">
+                    </div>
+                </div>
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Cloud
+                    </div>
+                    <div class="card-body tab-items">
+                        <img class="btn" src="https://skillicons.dev/icons?i=bash" alt="bootstrap-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=ansible" alt="html5-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=terraform" alt="css-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=docker" alt="javascript-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=kubernetes" alt="bootstrap-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=nginx" alt="bootstrap-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=aws" alt="bootstrap-icon" sizes="" srcset="">
+                    </div>
+                </div>
+                <div class="card rounded" style="width: 350px;">
+                    <div class="card-header">
+                        Others
+                    </div>
+                    <div class="card-body tab-items">
+                        <img class="btn" src="https://skillicons.dev/icons?i=windows" alt="bootstrap-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=linux" alt="javascript-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=vscode" alt="html5-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=vim" alt="javascript-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=git" alt="bootstrap-icon" sizes="" srcset="">
+                        <img class="btn" src="https://skillicons.dev/icons?i=github" alt="css-icon" sizes="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience">
+            <div class="tab-items mb-3">
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Alert Microfinance Bank
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">IT Support Officer/Web Developer</h4>
+                        <ul class="card-subtitle">
+                            <li>Developed responsive web app to expediate internal banking process.</li>
+                            <li>Troubleshooting hardware and software issues, and resolving technical problems via remote assistance and in-person.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-muted">Mar 2023 - Till Date</div>
+                </div>
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        InternPulse
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Backend Engineer</h4>
+                        <ul class="card-subtitle">
+                            <li>Designed the ERD for B2B database schema.</li>
+                            <li>Co-developed a RESTful APIs for a B2B using Django Restframework</li>
+                            <li>Developed a payment endpoint, integrated with paystack API.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-muted">Apr 2024 - June 2024</div>
+                </div>
+                <div class="card rounded mb-3" style="width: 350px;">
+                    <div class="card-header">
+                        Zuri Inc
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Backend Developer Intern</h4>
+                        <ul class="card-subtitle">
+                            <li>Acquired hands-on experience in implement CRUD operation using Django for API development.</li>
+                            <li>Developed the user authentication and authorization system, enhancing application security.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-muted">May 2022 - Aug 2022</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
