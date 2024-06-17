@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator
+from django.core.exceptions import ObjectDoesNotExist
 from .models import Project
 
 
@@ -9,10 +9,21 @@ def home(request):
 
 
 def webProject(request):
-    web_projects = Project.objects.filter(category="Web")
-    return render(request, "web_projects.html", {"web_obj": web_projects})
+    try:
+        web_projects = Project.objects.filter(category="Web")
+        return render(request, "web_projects.html", {"web_obj": web_projects})
+    except ObjectDoesNotExist:
+        return render(request, "home.html", {"error_message": "⚠️ Error fetching web projects."})
+    except Exception as e:
+        return render(request, "home.html", {"error_message": f"⚠️ An unexpected error occurred: {str(e)}"})
 
 
 def cloudProject(request):
-    cloud_projects = Project.objects.filter(category="Cloud")
-    return render(request, "cloud_projects.html", {"cloud_obj": cloud_projects})
+    try:
+        cloud_projects = Project.objects.filter(category="Cloud")
+        return render(request, "cloud_projects.html", {"cloud_obj": cloud_projects})
+    except ObjectDoesNotExist:
+        return render(request, "home.html", {"error_message": "⚠️ Error fetching cloud projects."})
+    except Exception as e:
+        return render(request, "home.html", {"error_message": f"⚠️ An unexpected error occurred: {str(e)}"})
+    

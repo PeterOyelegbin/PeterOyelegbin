@@ -27,6 +27,20 @@
     <!-- dynamic web pages -->
     <main>
         {% include 'navbar.html' %}
+        <!-- Notification or Alert System -->
+        {% if error_message %}
+        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+            <strong class="text-warning">{{ error_message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% elif messages %}
+        <div class="text-center alert alert-secondary alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong class="text-success">{{ message }}</strong>
+            {% endfor %}
+        </div>
+        {% endif %}
         {% block content %}
 
         {% endblock %}
