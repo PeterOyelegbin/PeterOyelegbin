@@ -2,11 +2,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-main {
-    height: 100vh;
-    overflow-y: scroll;
-}
-
 .img-fluid.rounded-circle {
     width: 300px;
     aspect-ratio: 1; /* Adjust the value as needed */
