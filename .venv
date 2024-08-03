@@ -8,3 +8,7 @@ DB_NAME=philipoy_peterdb
 CLOUD_NAME=chosen1
 API_SECRET=BIhcZhZbpIz8zYAYuidnLTRAZoo
 API_KEY=259953999733973
+EMAIL_HOST=mail.philipoyelegbin.com.ng
+EMAIL_PORT=587
+EMAIL_HOST_USER=noreply@philipoyelegbin.com.ng
+EMAIL_HOST_PASSWORD=Oyelegbin@96
