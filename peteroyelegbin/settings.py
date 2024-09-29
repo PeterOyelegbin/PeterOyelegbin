@@ -98,6 +98,14 @@ DATABASES = {
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASS')
+    },
+    'alternative': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': config('ALT_DB_HOST'),
+        'PORT': config('ALT_DB_PORT'),
+        'NAME': config('ALT_DB_NAME'),
+        'USER': config('ALT_DB_USER'),
+        'PASSWORD': config('ALT_DB_PASS')
     }
 }
 
