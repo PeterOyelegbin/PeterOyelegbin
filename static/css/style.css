@@ -1,5 +1,5 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .img-fluid.rounded-circle {
@@ -9,7 +9,7 @@ body {
 
 .social-link a {
     text-decoration: none;
-    color: orange;
+    color: rgb(0, 255, 255);
 }
 
 .tab-items {
@@ -18,10 +18,16 @@ body {
     justify-content: space-around;
 }
 
+
+.tab-items > .card.rounded {
+    min-width: 350px;
+    max-width: 350px;
+}
+
 .glide__arrow {
     background: none;
     border: none;
-    color: orange;
+    color: rgb(0, 255, 255);
     width: 40px;
     aspect-ratio: 1;
 }
@@ -55,4 +61,13 @@ body {
 
 .review-section div {
     padding: 10px;
+}
+
+
+/* Larger Screens: width >= 500px */
+@media (min-width: 500px) {
+    .tab-items > .card.rounded {
+        min-width: 420px;
+        max-width: 420px;
+    }
 }

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
+<div class="container-fliud" style="padding: 0 1rem;">
     <!-- Backend Project Section -->
     <section class="row mt-2 mb-3">
         <h2 class="text-primary">Backend Projects</h2>
@@ -9,7 +9,7 @@
             <div class="glide__track" data-glide-el="track">
                 <div class="glide__slides">
                     {% for project in web_obj %}
-                    <div class="glide__slide card rounded" style="width: 358px;">
+                    <div class="glide__slide card rounded border-primary text-white">
                         <img class="class-img-top" src="https://res.cloudinary.com/chosen1/image/upload/v1718465474/{{ project.cover_image }}" style="height: 300px;" loading="lazy" alt="cover_image">
                         <div class="card-body" style="height: 300px; overflow-y: scroll;">
                             <h4 class="card-title">{{ project.title }}</h4>

@@ -3,8 +3,8 @@
 <!-- Contact Section -->
 <section class="contact-section container-fluid d-flex align-items-center">
     <div class="text-white text-center">
-        <h2>Contact me right away!</h2>
-        <p class="h4">I specialize in developing bespoke Web apps and APIs. Please do not hesitate to use the button below if your company need my expertise.</p>
+        <h2>Your company deserves the best</h2>
+        <p class="h4">I have a proven track record in managing cloud infrastructure and developing customized APIs that deliver exceptional value. I'm here to provide the expertise you need to thrive, click the button below to get started!</p>
         <a class="btn btn-primary rounded" href="tel:+2348078828296">Call me</a>
         <a class="btn btn-primary rounded" href="mailto:peteroyelegbin@gmail.com">Send a mail</a>
     </div>
@@ -14,7 +14,7 @@
 <section class="review-section">
     <div class="col-md-6">
         <form class="card rounded" action="{% url 'contact' %}" method="post">
-            <h3 class="card-header text-white">Rate my services</h3>
+            <h3 class="card-header bg-light text-white">Rate my services</h3>
             {% csrf_token %}
             {{ formset.management_form }}
             <div class="row">
@@ -32,7 +32,7 @@
     <div class="col-md-6">
         <!-- Testimonial section -->
         <section class="card rounded" style="height: 340px; min-width: 350px;">
-            <h3 class="card-header text-white">Testimonial</h3>
+            <h3 class="card-header bg-light text-white">Testimonial</h3>
             {% if reviews %}
                 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
