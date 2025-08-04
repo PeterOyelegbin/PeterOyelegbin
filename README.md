@@ -1,22 +1,18 @@
 👋 Hi, I’m @PeterOyelegbin
 
-👀 Peter Taiwo Oyelegbin is an IT professional specializing in IT Support, Backend Development, and Cloud Computing - with a solid background encompassing 5 years in Maintenance Practice and 2 years in IT Support, he has navigated through intricate technical landscapes, mastering troubleshooting and solution-driven approaches in dynamic settings.
+🪪 As a cloud API developer, I am passionate about creating efficient APIs and integrating cloud services, especially with AWS. I specialize in automating deployments and optimizing serverless solutions. With over three years of experience in backend development using Django and FastAPI, I have strong proficiency in deploying applications that utilize VPC, EC2, ECS, Lambda, S3, RDS, and more. My problem-solving mindset drives me to effectively optimize both cloud performance and costs.
 
-Key Strengths:
-* Technical Support: Proficient in diagnosing and resolving technical issues promptly.
-* Backend Development: Skilled in creating efficient, scalable web applications using Python and Django.
-* Cloud Computing: Experienced in deploying and managing cloud-based solutions.
+💼 At Alert Microfinance Bank, I design secure APIs, enhance database performance, and implement AWS cloud solutions. My efforts have streamlined loan processing by 40% and improved scalability for real estate platforms during my time at ELBIS Homes.
 
-Professional Philosophy:
-He believes in collaborative teamwork, fostering a safe work environment, and continuous learning.
+📌 Key Skills: Python | AWS (VPC, EC2, ECS, Lambda, S3, RDS, SNS) | Django/FastAPI | RESTful APIs | Serverless Architecture | DevOps (Terraform, Docker) | Database Optimization
 
-🔭 He is currently engaged in developing an E-Voting Web App to improve Nigeria electoral process.
+🔭 I am currently engaged in developing an E-Voting Web App to improve Nigeria's electoral process.
 
-🌱 He is currently exploring Cloud Computing with 3MTT, AltSchool, and IHS Academy.
+🌱 I am currently exploring Cloud Engineering with AltSchool.
 
-💞️ He is looking to collaborate on web/mobile app projects as a Backend developer.
+💞️ I am eager to join cloud-first engineering teams in Cloud Development, Backend Engineering, or DevOps.
 
-📫 Reach him @ peteroyelegbin@gmail.com
+📫 I welcome connections with like-minded professionals to discuss technology, backend development, and cloud computing. Feel free to reach me @ peteroyelegbin@gmail.com
 
 <!---
 PeterOyelegbin/PeterOyelegbin is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
