@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com', 'peteroyelegbin.com.ng']
+ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com', '.vercel.app', 'peteroyelegbin.com.ng']
 
 
 # Application definition
@@ -91,22 +91,22 @@ DATABASES = {
     # }
 
     # Remote or production db
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'HOST': config('DB_HOST'),
-    #     'PORT': config('DB_PORT'),
-    #     'NAME': config('DB_NAME'),
-    #     'USER': config('DB_USER'),
-    #     'PASSWORD': config('DB_PASS')
-    # },
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': config('ALT_DB_HOST'),
-        'PORT': config('ALT_DB_PORT'),
-        'NAME': config('ALT_DB_NAME'),
-        'USER': config('ALT_DB_USER'),
-        'PASSWORD': config('ALT_DB_PASS')
-    }
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASS')
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'HOST': config('ALT_DB_HOST'),
+    #     'PORT': config('ALT_DB_PORT'),
+    #     'NAME': config('ALT_DB_NAME'),
+    #     'USER': config('ALT_DB_USER'),
+    #     'PASSWORD': config('ALT_DB_PASS')
+    # }
 }
 
 # DATABASE_ROUTERS = ['routers.db_routers.PrimaryReplicaRouter']
