@@ -3,8 +3,8 @@
 <!-- Contact Section -->
 <section class="contact-section container-fluid d-flex align-items-center">
     <div class="text-white text-center">
-        <h2>Your company deserves the best</h2>
-        <p class="h4">I have a proven track record in managing cloud infrastructure and developing customized APIs that deliver exceptional value. I'm here to provide the expertise you need to thrive, click the button below to get started!</p>
+        <h4>Your company deserves the best</h4>
+        <p class="h6">I have a proven track record in managing cloud infrastructure and developing customized APIs that deliver exceptional value. I'm here to provide the expertise you need to thrive, click the button below to get started!</p>
         <a class="btn btn-primary rounded" href="tel:+2348078828296">Call me</a>
         <a class="btn btn-primary rounded" href="mailto:info@peteroyelegbin.com.ng">Send a mail</a>
     </div>
@@ -14,7 +14,7 @@
 <section class="review-section">
     <div class="col-md-6">
         <form class="card rounded" action="{% url 'contact' %}" method="post">
-            <h3 class="card-header bg-light text-white">Rate my services</h3>
+            <h5 class="card-header bg-light text-white">Rate my services</h5>
             {% csrf_token %}
             {{ formset.management_form }}
             <div class="row">
@@ -31,15 +31,15 @@
 
     <div class="col-md-6">
         <!-- Testimonial section -->
-        <section class="card rounded" style="height: 340px; min-width: 350px;">
-            <h3 class="card-header bg-light text-white">Testimonial</h3>
+        <section class="card rounded" style="height: 320px; min-width: 350px;">
+            <h5 class="card-header bg-light text-white">Testimonial</h5>
             {% if reviews %}
                 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         {% for review in reviews %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
                             <img src="{{ review.gravatar_url }}" class="mr-3 rounded-circle" alt="User Image" width="30" height="30">
-                            <span class="card-title h4">{{ review.full_name }}</span>
+                            <span class="card-title h6">{{ review.full_name }}</span>
                             <hr>
                             <p style="height: 120px; overflow-y: scroll;">{{ review.comment }}</p>
                             <div class="d-flex justify-content-between">

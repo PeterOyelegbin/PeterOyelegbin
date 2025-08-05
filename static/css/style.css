@@ -1,15 +1,35 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Poppins, Montserrat, sans-serif, Verdana, Geneva, Tahoma;
+    font-size: 14px;
+    background-color: #0F172A;
+    color: #F8FAFC;
+}
+
+.navbar{
+    background-color: #3B82F6;
+}
+
+h4 {
+    color: #38BDF8;
 }
 
 .img-fluid.rounded-circle {
-    width: 300px;
+    width: 250px;
     aspect-ratio: 1; /* Adjust the value as needed */
 }
 
 .social-link a {
     text-decoration: none;
-    color: rgb(0, 255, 255);
+    color: #38BDF8;
+}
+
+.nav-link{
+    color: #F8FAFC;
+}
+
+.nav-link.active{
+    background-color: #38BDF8;
+    color: #F8FAFC;
 }
 
 .tab-items {
@@ -17,7 +37,6 @@ body {
     flex-flow: wrap;
     justify-content: space-around;
 }
-
 
 .tab-items > .card.rounded {
     min-width: 350px;
@@ -27,7 +46,7 @@ body {
 .glide__arrow {
     background: none;
     border: none;
-    color: rgb(0, 255, 255);
+    color: #38BDF8;
     width: 40px;
     aspect-ratio: 1;
 }
@@ -64,10 +83,19 @@ body {
 }
 
 
-/* Larger Screens: width >= 500px */
+/* Large Screens: width >= 500px */
 @media (min-width: 500px) {
     .tab-items > .card.rounded {
         min-width: 420px;
         max-width: 420px;
+    }
+}
+
+
+/* Larger Screens: width >= 1380px */
+@media (min-width: 1380px) {
+    .tab-items > .card.rounded {
+        min-width: 500px;
+        max-width: 500px;
     }
 }
