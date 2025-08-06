@@ -1,5 +1,5 @@
 pip>=23.0
-setuptools
+setuptools>=60
 wheel
 python-decouple==3.8
 Django==3.2
