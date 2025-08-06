@@ -1,9 +1,5 @@
-pip>=23.0
-setuptools>=60
-wheel
 python-decouple==3.8
 Django==3.2
-# Django==4.2
 Pillow==9.4.0
 cloudinary==1.32.0
 django-cloudinary-storage==0.3.0
