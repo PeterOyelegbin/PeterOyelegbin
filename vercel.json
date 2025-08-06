@@ -2,15 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "peteroyelegbin/wsgi.py",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "50mb", "runtime": "python3.11" }
+      "src": "Dockerfile",
+      "use": "@vercel/docker"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "peteroyelegbin/wsgi.py"
-    }
+    { "src": "/(.*)", "dest": "/" }
   ]
 }

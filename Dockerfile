@@ -11,10 +11,11 @@ WORKDIR /app
 COPY . /app/
 
 # Install dependencies
+RUN pip install --upgrade pip setuptools
 RUN pip install -r requirements.txt
 
 # Expose the port the app runs on
 EXPOSE 8000
 
-# Run the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run the Django app via WSGI
+CMD ["gunicorn", "peteroyelegbin.wsgi:application", "--bind", "0.0.0.0:8000"]
