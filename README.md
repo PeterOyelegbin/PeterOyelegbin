@@ -1,18 +1,20 @@
+<img width="1400" height="350" alt="image" src="https://github.com/user-attachments/assets/52c82ad9-e526-4dbd-ac9e-13d8a5da8db9" />
+
 👋 Hi, I’m @PeterOyelegbin
 
-🪪 As a cloud API developer, I am passionate about creating efficient APIs and integrating cloud services, especially with AWS. I specialize in automating deployments and optimizing serverless solutions. With over three years of experience in backend development using Django and FastAPI, I have strong proficiency in deploying applications that utilize VPC, EC2, ECS, Lambda, S3, RDS, and more. My problem-solving mindset drives me to effectively optimize both cloud performance and costs.
+🪪 As a Support & Cloud Operations Engineer with over 3 years of experience helping organizations optimize IT operations, automate their infrastructure, and enhance system reliability. My passion lies in cloud-native solutions, infrastructure automation, and end-to-end IT support.
 
-💼 At Alert Microfinance Bank, I design secure APIs, enhance database performance, and implement AWS cloud solutions. My efforts have streamlined loan processing by 40% and improved scalability for real estate platforms during my time at ELBIS Homes.
+💼 I have developed cloud-native applications that increased operational efficiency by 40%, created automation scripts that eliminated manual errors, implemented CI/CD pipelines that reduced deployment time by half, and maintained 99.9% uptime by proactively managing networks, firewalls, and systems. My unique strength is a holistic perspective built from hands-on Tech Support, combined with expertise in AWS cloud operations and Django API development. This allows me to not only architect solutions but also deeply understand their operational impact and reliability needs.
 
-📌 Key Skills: Python | AWS (VPC, EC2, ECS, Lambda, S3, RDS, SNS) | Django/FastAPI | RESTful APIs | Serverless Architecture | DevOps (Terraform, Docker) | Database Optimization
+📌 Key Skills: AWS (EC2, S3, Lambda, RDS, IAM, SNS, VPC) | Terraform | Ansible | Docker | GitHub Actions (CI/CD) | Python (Django) | Linux | Windows Server | Networking | Troubleshooting | IT Support
 
 🔭 I am currently engaged in developing an E-Voting Web App to improve Nigeria's electoral process.
 
-🌱 I am currently exploring Cloud Engineering with AltSchool.
+🌱 I am currently enhancing my Cloud Engineering skills with AltSchool.
 
-💞️ I am eager to join cloud-first engineering teams in Cloud Development, Backend Engineering, or DevOps.
+💞️ I am actively seeking opportunities as a Cloud/DevOps Engineer or API Developer where I can apply my skills in development, automation, and cloud infrastructure to tackle complex challenges and drive business growth.
 
-📫 I welcome connections with like-minded professionals to discuss technology, backend development, and cloud computing. Feel free to reach me @ peteroyelegbin@gmail.com
+📫 If you're looking for someone who can bridge IT support, DevOps, and cloud engineering while delivering measurable impact, feel free to reach me @ peteroyelegbin@gmail.com
 
 <!---
 PeterOyelegbin/PeterOyelegbin is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
