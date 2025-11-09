@@ -3,17 +3,14 @@
   "builds": [
     {
       "src": "peteroyelegbin/wsgi.py",
-      "use": "@vercel/python",
-      "config": { 
-        "pythonVersion": "3.11" 
-      }
-    },
-    {
-      "src": "build.sh",
-      "use": "@vercel/static-build"
+      "use": "@vercel/python"
     }
   ],
   "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "peteroyelegbin/wsgi.py"
