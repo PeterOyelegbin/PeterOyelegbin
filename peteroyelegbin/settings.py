@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'peteroyelegbin.wsgi.application'
+WSGI_APPLICATION = 'peteroyelegbin.wsgi.app'
 
 
 # Database
