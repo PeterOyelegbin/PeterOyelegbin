@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com', '.vercel.app', 'peteroyelegbin.com.ng']
+ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com', '.vercel.app', 'peteroyelegbin.com.ng', 'www.peteroyelegbin.com.ng']
 
 
 # Application definition
