@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,10 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com', '.vercel.app', 'peteroyelegbin.com.ng', 'www.peteroyelegbin.com.ng']
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [host.strip() for host in v.split(',')])
 
 # Application definition
 
@@ -51,13 +49,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'peteroyelegbin.urls'
@@ -83,31 +81,48 @@ WSGI_APPLICATION = 'peteroyelegbin.wsgi.app'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-
-    # Remote or production db
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASS')
-    },
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'HOST': config('ALT_DB_HOST'),
-    #     'PORT': config('ALT_DB_PORT'),
-    #     'NAME': config('ALT_DB_NAME'),
-    #     'USER': config('ALT_DB_USER'),
-    #     'PASSWORD': config('ALT_DB_PASS')
-    # }
-}
+if DEBUG:
+    # Test with SQLite for simplicity, switch to PostgreSQL/MySQL for production
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DB_MAIN = config('DB_MAIN', cast=bool, default=True)
+    if DB_MAIN:
+        DATABASES = {
+            'default': {
+                # PostgreSQL configuration for production
+                'ENGINE': 'django.db.backends.postgresql',
+                'HOST': config('DB_HOST'),
+                'PORT': config('DB_PORT'),
+                'NAME': config('DB_NAME'),
+                'USER': config('DB_USER'),
+                'PASSWORD': config('DB_PASS'),
+                # Reuse DB connections for 60s to avoid per-request reconnect overhead
+                'CONN_MAX_AGE': config('DB_CONN_MAX_AGE', default=60, cast=int),
+                # Verify connection is alive before reusing (prevents stale connection errors)
+                'CONN_HEALTH_CHECKS': True
+            }
+        }
+    else:
+        DATABASES = {
+            'default': {
+                # Alternative PostgreSQL configuration for production
+                'ENGINE': 'django.db.backends.postgresql',
+                'HOST': config('ALT_DB_HOST'),
+                'PORT': config('ALT_DB_PORT'),
+                'NAME': config('ALT_DB_NAME'),
+                'USER': config('ALT_DB_USER'),
+                'PASSWORD': config('ALT_DB_PASS'),
+                # Reuse DB connections for 60s to avoid per-request reconnect overhead
+                'CONN_MAX_AGE': config('DB_CONN_MAX_AGE', default=60, cast=int),
+                # Verify connection is alive before reusing (prevents stale connection errors)
+                'CONN_HEALTH_CHECKS': True
+            }
+        }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -143,13 +158,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+STATICFILES_DIRS = [BASE_DIR / "static",]
 
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -175,9 +188,24 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config("EMAIL_HOST")
 EMAIL_PORT = config("EMAIL_PORT")
-DEFAULT_FROM_EMAIL = config("EMAIL_HOST_USER")
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=True)
+EMAIL_USE_SSL = config("EMAIL_USE_SSL", cast=bool, default=False)
 EMAIL_TIMEOUT = 3600  # 3600 sec
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "ERROR",
+    },
+}
