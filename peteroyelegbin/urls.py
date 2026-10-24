@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from projects.views import home, webProject, cloudProject
+from projects.views import home#, webProject, cloudProject
 from reviews.views import addReviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", home, name="home"),
-    path("web-projects/", webProject, name="web_projects"),
-    path("cloud-projects/", cloudProject, name="cloud_projects"),
-    path("contact/", addReviews, name="contact"),
+    # path("web-projects/", webProject, name="web_projects"),
+    # path("cloud-projects/", cloudProject, name="cloud_projects"),
+    # path("contact/", addReviews, name="contact"),
 ]
