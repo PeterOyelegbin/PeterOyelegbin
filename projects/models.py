@@ -14,8 +14,10 @@ class Project(models.Model):
     category = models.CharField(max_length=50, choices=Category.choices)
     cover_image = models.ImageField(upload_to='portfolio/peter/')
     description = models.TextField()
-    project_url = models.URLField()
-    github_url = models.URLField()
+    results = models.TextField(blank=True, null=True)
+    technologies = models.CharField(max_length=255, blank=True, null=True)
+    project_url = models.URLField(blank=True, null=True)
+    github_url = models.URLField(blank=True, null=True)
     date = models.DateField(auto_now_add=True)
 
     # Sort data in descending order

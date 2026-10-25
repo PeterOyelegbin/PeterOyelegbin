@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Backend & DevOps Engineer with 3+ years of experience in CI/CD automation and management with GitHub Actions, configuration management using Terraform and Ansible, API development using Python, Django, and FastAPI.">
+    <meta name="keywords" content="Peter Taiwo Oyelegbin, DevOps Engineer, Cloud Infrastructure Management, Django Developer, Backend Engineer">
+    <meta name="author" content="Peter Taiwo Oyelegbin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Oyelegbin | Django Backend & DevOps Engineer</title>
+    {% load static %}
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/profile_pic.png">
+    <!-- Google Fonts Inter & Fira Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-300 min-h-screen flex flex-col justify-between">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center group-hover:border-emerald-400 transition-colors">
+                        <i class="fa-solid fa-server text-emerald-400 text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="font-mono font-bold text-white tracking-wider block text-sm">PETER OYELEGBIN</span>
+                        <span class="text-[11px] font-mono text-slate-400 block -mt-1">Backend & DevOps Engineer</span>
+                    </div>
+                </a>
+
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors">About</a>
+                    <a href="#skills" class="text-slate-300 hover:text-emerald-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition-colors">Projects</a>
+                    <a href="#experience" class="text-slate-300 hover:text-emerald-400 transition-colors">Experience</a>
+                    <a href="#reviews" class="text-slate-300 hover:text-emerald-400 transition-colors">Reviews</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div>
+                    <a href="#contact" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold font-mono text-xs transition-all shadow-md shadow-emerald-500/10 inline-flex items-center space-x-2">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>Hire Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification or Alert System -->
+    {% if error_message or messages %}
+    <div class="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-4 space-y-3">
+        {% if error_message %}
+        <div class="flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200" role="alert">
+            <i class="fa-solid fa-circle-exclamation mt-0.5 text-red-400" aria-hidden="true"></i>
+            <p class="flex-1">{{ error_message }}</p>
+            <button type="button" onclick="this.parentElement.remove()" class="text-red-300 transition-colors hover:text-white" aria-label="Dismiss alert">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+        {% endif %}
+        {% for message in messages %}
+        <div class="flex items-start gap-3 rounded-xl border {% if 'error' in message.tags %}border-red-500/30 bg-red-500/10 text-red-200{% else %}border-emerald-500/30 bg-emerald-500/10 text-emerald-200{% endif %} p-4 text-sm" role="alert">
+            <i class="{% if 'error' in message.tags %}fa-solid fa-circle-exclamation text-red-400{% else %}fa-solid fa-circle-check text-emerald-400{% endif %} mt-0.5" aria-hidden="true"></i>
+            <p class="flex-1">{{ message }}</p>
+            <button type="button" onclick="this.parentElement.remove()" class="text-slate-400 transition-colors hover:text-white" aria-label="Dismiss notification">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-20">
+        <!-- HERO SECTION -->
+        <section id="about" class="pt-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Brief Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="text-xs font-mono text-slate-300">Available for Contract & Full-time Roles</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                        Building Robust <span class="text-emerald-400">Django APIs</span> & Automated Cloud Pipelines.
+                    </h1>
+
+                    <label class="text-slate-300 text-base sm:text-lg font-light leading-relaxed">
+                        Backend & DevOps Engineer specializing in architecting resilient RESTful APIs with Django & FastAPI, and automating cloud infrastructure and CI/CD pipelines using Terraform, GitHub Actions, and Azure DevOps. I bridge the gap between robust software development and scalable cloud operations.
+                    </label>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#projects" class="px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold font-mono text-xs transition-all shadow-lg shadow-emerald-500/10 flex items-center space-x-2">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+
+                        <a href="https://drive.google.com/file/d/1OvN_d094JukwXRGJvIh1RdjAqTxS9QtT/view?usp=drive_link" class="px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-mono text-xs transition-colors flex items-center space-x-2" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-eye text-amber-400"></i>
+                            <span>View Resume</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Picture -->
+                <div class="lg:col-span-5">
+                    <img src="{% static 'images/profile_pic.png' %}" alt="Peter Oyelegbin" class="mx-auto aspect-square w-64 rounded-full border border-slate-800 object-cover object-center shadow-2xl sm:w-80">
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX -->
+        <section id="skills" class="space-y-4">
+            <div class="border-b border-slate-800 pb-4 text-center">
+                <h2 class="text-2xl font-bold text-white">Technical Skills & Expertise</h2>
+                <p class="text-slate-400 text-sm mt-1">Core technologies I use to build, deploy, and maintain web services.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Backend Engineering -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center space-x-3 text-emerald-400">
+                        <i class="fa-solid fa-code text-lg"></i>
+                        <h3 class="font-bold text-white text-base">Backend Development</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300">
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Python, Django/DRF, FastAPI
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            RESTful APIs & OpenAPI/Swagger
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Celery, RabbitMQ & Redis
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            SQL, NoSQL & ORM Optimization
+                        </li>
+                        <li class="p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Escrow Payment System
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DevOps & Infrastructure -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center space-x-3 text-cyan-400">
+                        <i class="fa-solid fa-cloud text-lg"></i>
+                        <h3 class="font-bold text-white text-base">DevOps & Cloud</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300">
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            GitHub Actions & Azure Pipelines
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Docker, Docker compose & Kubernetes
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            AWS (EC2, S3, RDS, ECR), Azure (VM, VNet, Firewall)
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Nginx & Gunicorn
+                        </li>
+                        <li class="p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Terraform & Ansible
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Observability & Tools -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                    <div class="flex items-center space-x-3 text-amber-400">
+                        <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                        <h3 class="font-bold text-white text-base">Tools & Workflow</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs font-mono text-slate-300">
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Git/GitHub Workflows
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Linux System Admin
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Pytest & Integration Tests
+                        </li>
+                        <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/60">
+                            Prometheus, Grafana, New Relic & Logging
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT SECTION -->
+        <section id="projects" class="space-y-6">
+            <div class="border-b border-slate-800 pb-4 text-center">
+                <h2 class="text-2xl font-bold text-white">Featured Projects</h2>
+                <p class="text-slate-400 text-sm mt-1">Explore my backend architectures, REST API designs, and cloud infrastructures.</p>
+            </div>
+
+            <!-- Carousel Wrapper -->
+            <div class="relative overflow-hidden rounded-2xl bg-slate-900/40 border border-slate-800/80 p-2 sm:p-4">
+                <div id="projectCarouselTrack" class="flex transition-transform duration-500 ease-in-out">
+                    {% if project_pages.count %}
+                    {% for project_page in project_pages %}
+                    <div class="w-full flex-shrink-0 p-2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {% for project in project_page %}
+                            <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden flex flex-col justify-between group hover:border-slate-700 transition-all">
+                                <div>
+                                    <!-- Cover Image -->
+                                    <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+                                        <img src="https://res.cloudinary.com/chosen1/image/upload/v1718465474/{{ project.cover_image }}" alt="{{ project.title }}" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 border border-emerald-500/30 text-[11px] font-mono">
+                                            {{ project.category }}
+                                        </span>
+                                    </div>
+
+                                    <div class="p-6 space-y-3">
+                                        <div class="text-xs font-mono text-slate-500">{{ project.technologies|default:"No technologies specified" }}</div>
+                                        <h3 class="text-xl font-bold text-white">{{ project.title }}</h3>
+                                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                            {{ project.description }}
+                                        </p>
+                                        
+                                        <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-800/80 text-xs font-mono text-slate-300 space-y-1.5">
+                                            <div class="text-[10px] text-slate-500 uppercase tracking-wider">Key Optimization</div>
+                                            <p class="text-emerald-400"><i class="fa-solid fa-bolt mr-1"></i> {{ project.results|default:"No results specified" }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-6 pt-0 border-t border-slate-900 mt-4 flex items-center justify-between font-mono text-xs">
+                                    <div class="flex flex-wrap gap-1.5 text-slate-400 text-[11px]">
+                                        <a href="{{ project.github_url }}" target="_blank" class="px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-lg transition-colors flex items-center space-x-1.5 text-xs">
+                                            <span>Code</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex flex-wrap gap-1.5 text-slate-400 text-[11px]">
+                                        <a href="{{ project.project_url }}" target="_blank" class="px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-lg transition-colors flex items-center space-x-1.5 text-xs">
+                                            <span>Live Demo</span>
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <p class="w-full rounded-xl border border-slate-800 bg-slate-950/60 p-6 text-center text-sm text-slate-400">
+                        Projects will appear here soon.
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if project_pages.num_pages > 1 %}
+            <div class="flex items-center justify-center space-x-4 pt-2">
+                <button id="projectPrevBtn" onclick="moveProjectSlide(-1)" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="flex justify-center space-x-2" id="projectDots">
+                    {% for page_number in project_pages.page_range %}
+                    <button onclick="goToProjectSlide({{ forloop.counter0 }})" aria-label="Go to project slide {{ page_number }}" class="project-dot w-3 h-3 rounded-full {% if forloop.first %}bg-emerald-400{% else %}bg-slate-700{% endif %} transition-all"></button>
+                    {% endfor %}
+                </div>
+                <button id="projectNextBtn" onclick="moveProjectSlide(1)" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section id="experience" class="space-y-6">
+            <div class="border-b border-slate-800 pb-4 text-center">
+                <h2 class="text-2xl font-bold text-white">Work History</h2>
+                <p class="text-slate-400 text-sm mt-1">My professional experience as a backend and devops engineer.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Job 1 -->
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <div>
+                            <h3 class="font-bold text-white text-base">DevOps Engineer</h3>
+                            <p class="text-emerald-400 text-xs font-mono">Fast Credit Finance Company Limited • Full-time</p>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500">2025 - Present</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs sm:text-sm text-slate-300 space-y-1.5 leading-relaxed">
+                        <li>Built multi-stage CI/CD pipelines in Azure DevOps, cutting deployment time by 40% and enabling 3x more frequent releases with zero rollback failures.</li>
+                        <li>Instrumented New Relic monitoring across 10+ on-prem servers (app, DB, instances), reducing mean time to detection (MTTD) by 60%.</li>
+                        <li>Refactored NGINX reverse proxy rules and managed SSL certificate renewal, improving security compliance.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <div>
+                            <h3 class="font-bold text-white text-base">IT Support/API Developer</h3>
+                            <p class="text-emerald-400 text-xs font-mono">Alert Microfinance Bank • Full-time</p>
+                        </div>
+                        <span class="text-xs font-mono text-slate-500">2023 - 2025</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs sm:text-sm text-slate-300 space-y-1.5 leading-relaxed">
+                        <li>Designed and deployed a loan processing and account opening application using Django and AWS S3, increasing operational efficiency by 40%.</li>
+                        <li>Built a Python script that reduced debit card PIN request handling from 10 minutes to under 30 seconds and eliminated 100% of manual entry errors.</li>
+                        <li>Delivered Level 1 & 2 support to 300+ staff with 95% first-contact resolution rate, reducing escalations to external vendors by 70%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS SECTION -->
+        <section id="reviews" class="space-y-8">
+            <div class="border-b border-slate-800 pb-4 text-center">
+                <h2 class="text-2xl font-bold text-white">Client Reviews & Rating</h2>
+                <p class="text-slate-400 text-sm mt-1">Read feedback from clients or leave a rating for my backend and DevOps work.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Rate My Work Form -->
+                <div class="lg:col-span-5 bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-2">
+                    <div class="space-y-1">
+                        <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span>Rate My Work</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">Worked with me? Leave your rating and testimonial below.</p>
+                    </div>
+
+                    <form method="post" action="{% url 'home' %}" class="space-y-2 text-xs font-mono">
+                        {% csrf_token %}
+                        <input type="hidden" name="form_type" value="review">
+                        {{ review_form.ratings }}
+                        {% for error in review_form.ratings.errors %}
+                        <p class="text-xs text-red-400">{{ error }}</p>
+                        {% endfor %}
+                        {% for error in review_form.non_field_errors %}
+                        <p class="text-xs text-red-400">{{ error }}</p>
+                        {% endfor %}
+                        <div>
+                            <label for="{{ review_form.full_name.id_for_label }}" class="block text-slate-400 mb-1">Your Name</label>
+                            {{ review_form.full_name }}
+                            {% for error in review_form.full_name.errors %}
+                            <p class="mt-1 text-xs text-red-400">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+
+                        <div>
+                            <label for="{{ review_form.email.id_for_label }}" class="block text-slate-400 mb-1">Email Address</label>
+                            {{ review_form.email }}
+                            {% for error in review_form.email.errors %}
+                            <p class="mt-1 text-xs text-red-400">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-400 mb-1">Your Rating</label>
+                            <div class="flex items-center space-x-2 text-xl text-slate-600" id="starRatingContainer">
+                                <i class="fa-solid fa-star cursor-pointer hover:text-amber-400 transition-colors" onclick="setRating(1)"></i>
+                                <i class="fa-solid fa-star cursor-pointer hover:text-amber-400 transition-colors" onclick="setRating(2)"></i>
+                                <i class="fa-solid fa-star cursor-pointer hover:text-amber-400 transition-colors" onclick="setRating(3)"></i>
+                                <i class="fa-solid fa-star cursor-pointer hover:text-amber-400 transition-colors" onclick="setRating(4)"></i>
+                                <i class="fa-solid fa-star cursor-pointer hover:text-amber-400 transition-colors" onclick="setRating(5)"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="{{ review_form.comment.id_for_label }}" class="block text-slate-400 mb-1">Review Feedback</label>
+                            {{ review_form.comment }}
+                            {% for error in review_form.comment.errors %}
+                            <p class="mt-1 text-xs text-red-400">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+
+                        <button type="submit" class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Submit Review</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Reviews List Container -->
+                <div class="lg:col-span-7 space-y-2">
+                    <h3 class="text-lg font-bold text-white font-mono flex items-center space-x-2">
+                        <i class="fa-solid fa-comments text-emerald-400"></i>
+                        <span>Client Reviews (<span id="reviewCount">{{ review_pages.count }}</span>)</span>
+                    </h3>
+
+                    <div id="reviewsList" class="relative overflow-hidden rounded-xl bg-slate-900/30 border border-slate-800 p-3">
+                        <div id="reviewCarouselTrack" class="flex transition-transform duration-500 ease-in-out">
+                            {% if review_pages.count %}
+                            {% for review_page in review_pages %}
+                            <div class="w-full flex-shrink-0 space-y-4 p-1">
+                                {% for review in review_page %}
+                                <!-- <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-5 space-y-3"> -->
+                                <div class="h-72 overflow-y-auto bg-slate-900/40 border border-slate-800 rounded-xl p-5 space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h4 class="font-bold text-white text-sm">{{ review.full_name }}</h4>
+                                            <p class="text-[11px] font-mono text-slate-500">{{ review.date }}</p>
+                                        </div>
+                                        <div class="text-amber-400 text-xs">
+                                            {% for star in "12345" %}
+                                            {% if forloop.counter <= review.ratings %}
+                                            <i class="fa-solid fa-star"></i>
+                                            {% else %}
+                                            <i class="fa-regular fa-star"></i>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                                        "{{ review.comment }}"
+                                    </p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                            {% else %}
+                            <div class="w-full flex-shrink-0 p-1">
+                                <p id="emptyReviewsMessage" class="rounded-xl border border-slate-800 bg-slate-950/60 p-6 text-center text-sm text-slate-400">
+                                    Reviews will appear here soon.
+                                </p>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% if review_pages.num_pages > 1 %}
+                    <div class="flex items-center justify-center space-x-4 pt-2">
+                        <button id="reviewPrevBtn" onclick="moveReviewSlide(-1)" aria-label="Previous review slide" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors flex items-center justify-center shadow-lg">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <div class="flex justify-center space-x-2" id="reviewDots">
+                            {% for page_number in review_pages.page_range %}
+                            <button onclick="goToReviewSlide({{ forloop.counter0 }})" aria-label="Go to review slide {{ page_number }}" class="review-dot w-3 h-3 rounded-full {% if forloop.first %}bg-emerald-400{% else %}bg-slate-700{% endif %} transition-all"></button>
+                            {% endfor %}
+                        </div>
+                        <button id="reviewNextBtn" onclick="moveReviewSlide(1)" aria-label="Next review slide" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:border-emerald-500 hover:text-emerald-400 transition-colors flex items-center justify-center shadow-lg">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-10 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-5 space-y-4">
+                    <h2 class="text-2xl font-bold text-white">Let's Work Together</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Looking for a dependable engineer to build your Django backend, deploy your applications, or automate your cloud infrastructure? Send me a message!
+                    </p>
+                    
+                    <div class="space-y-2 pt-2 font-mono text-xs">
+                        <div class="flex items-center space-x-3 text-slate-300">
+                            <i class="fa-regular fa-envelope text-emerald-400 w-4"></i>
+                            <span>peteroyelegbin@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-slate-300">
+                            <i class="fa-brands fa-x text-emerald-400 w-4"></i>
+                            <span>x.com/PeterOyelegbin</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-slate-300">
+                            <i class="fa-brands fa-linkedin text-emerald-400 w-4"></i>
+                            <span>linkedin.com/in/peteroyelegbin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="md:col-span-7 bg-slate-950 p-6 rounded-xl border border-slate-800">
+                    <form method="post" action="{% url 'home' %}" class="space-y-4 font-mono text-xs">
+                        {% csrf_token %}
+                        <input type="hidden" name="form_type" value="contact">
+                        <div>
+                            <label for="{{ contact_form.name.id_for_label }}" class="block text-slate-400 mb-1">Your Name</label>
+                            {{ contact_form.name }}
+                            {% for error in contact_form.name.errors %}
+                            <p class="mt-1 text-red-400">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <label for="{{ contact_form.email.id_for_label }}" class="block text-slate-400 mb-1">Email Address</label>
+                            {{ contact_form.email }}
+                            {% for error in contact_form.email.errors %}
+                            <p class="mt-1 text-red-400">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <label for="{{ contact_form.message.id_for_label }}" class="block text-slate-400 mb-1">Project Details / Message</label>
+                            {{ contact_form.message }}
+                            {% for error in contact_form.message.errors %}
+                            <p class="mt-1 text-red-400">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        <button type="submit" class="w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded transition-colors text-xs flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-6 text-center text-xs font-mono text-slate-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&COPY; 2022 - <span id="year"></span> Peter Oyelegbin.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

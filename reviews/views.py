@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import ReviewForm
 from .models import Review
-from utils import get_gravatar_url, send_async_email
-import threading
+from .notifications import notify_admin_of_review_submission
+from utils import get_gravatar_url
 
 
 # Create your views here.
@@ -13,16 +12,8 @@ def addReviews(request):
     formset = ReviewForm(request.POST or None)
     if request.method == 'POST':
         if formset.is_valid():
-            # Asynchronously handle send mail
-            threading.Thread(target=send_async_email, args=(
-                'Portfolio: New Review Uploaded',
-                f"""Dear Peter,\n\nA new review has been submitted for approval on your portfolio,
-                kindly attend to the review as it awaits your approval.\n\nBest regards,
-                \nhttps://peteroyelegbin.onrender.com/admin""",
-                settings.EMAIL_HOST_USER,
-                ['peteroyelegbin@gmail.com']
-            )).start()
             formset.save()
+            notify_admin_of_review_submission()
             messages.success(request, 'Review submitted successfully')
             return redirect('contact')
         else:
